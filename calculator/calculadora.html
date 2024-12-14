@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="calculadora.css">
+</head>
+<body>
+    <div class="calculator">
+
+        <div id="display_div">
+            <form onsubmit="calculateResult(event)" id="form1">
+                <input type="text" id='display' class="display">
+            </form>
+        </div>
+
+        <div class="buttons">
+            <button onclick="clearDisplay()" class="other_buttons"><strong>C</strong></button>
+            <button onclick="writeDisplay('(')" class="other_buttons"><strong >(</strong></button>
+            <button onclick="writeDisplay(')')" class="other_buttons"><strong>)</strong></button>
+            <button onclick="writeDisplay('+')" class="operators"><strong>+</strong></button>
+            <button onclick="writeDisplay('8')"><strong>8</strong></button>
+            <button onclick="writeDisplay('7')"><strong>7</strong></button>
+            <button onclick="writeDisplay('9')"><strong>9</strong></button>
+            <button onclick="writeDisplay('-')" class="operators"><strong>-</strong></button>
+            <button onclick="writeDisplay('4')"><strong>4</strong></button>
+            <button onclick="writeDisplay('5')"><strong>5</strong></button>
+            <button onclick="writeDisplay('6')"><strong>6</strong></button>
+            <button onclick="writeDisplay('*')" class="operators"><strong>x</strong></button>
+            <button onclick="writeDisplay('1')"><strong>1</strong></button>
+            <button onclick="writeDisplay('2')"><strong>2</strong></button>
+            <button onclick="writeDisplay('3')"><strong>3</strong></button>
+            <button onclick="writeDisplay('/')" class="operators"><strong>/</strong></button>
+            <button onclick="writeDisplay('0')"><strong>0</strong></button>
+            <button onclick="writeDisplay('.')"><strong>.</strong></button>
+            <button onclick="calculateResult(event)" class="other_buttons"><strong>=</strong></button>
+        </div>
+
+    </div>
+    <script src="calculadora.js"></script>
+</body>
+</html>
