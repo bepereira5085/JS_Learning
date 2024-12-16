@@ -1,4 +1,5 @@
 let taskList
+var initial_message = document.getElementById('tasklist').innerHTML
 
 /* CARREGAR A LISTA */
 
@@ -14,7 +15,6 @@ function loadTasks() {
 function updateList() {
 
     let tasklist = document.getElementById('tasklist')
-    let initial_message = document.getElementById('tasklist').innerHTML
     tasklist.innerHTML = ''
 
     if (taskList.length > 0) {
@@ -24,6 +24,7 @@ function updateList() {
 
         taskList.forEach((task, index) => {
             let newLi = document.createElement('li')
+            newLi.classList = "task"
             let icon_delete = document.createElement('span')
             let position_number = document.createElement('span')
             let task_listened = document.createElement('span')

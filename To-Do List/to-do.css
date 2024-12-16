@@ -2,6 +2,37 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: green;
 }
 
+header {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw;
+}
+
+#search_div {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+main > ol {
+    background-color: grey;
+    height: 80vh;
+    width: 90vw;
+    
+}
+
+.task {
+    list-style: none;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer {
+    background-color: blue;
+}
