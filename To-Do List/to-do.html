@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="to-do.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<header>
+    <h2>To-Do List</h2>
+    <label for="search_input" class="material-icons" style="font-size: 40px; color:white;">search</label>
+    <input type="search" id="search_input">
+</header>
+<body onload="loadTasks()">
+    <main id="tasklist">
+        <span class="material-icons">task_alt</span>
+        <p>Insira uma tarefa...</p>
+    </main>
+</body>
+<footer>
+    <i onclick="addTask(event)" class="material-icons" style="color:white;">add_box</i>
+    <form onsubmit="addTask(event)"><input type="text" id="task"></form>
+</footer>
+<script src="to-do.js"></script>
+</html>
