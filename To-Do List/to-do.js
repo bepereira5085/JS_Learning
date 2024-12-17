@@ -29,6 +29,7 @@ function updateList() {
             let done_task = document.createElement('input')
             done_task.type = 'checkbox'
             let task_listened = document.createElement('span')
+            let newDiv = document.createElement('div')
             
             done_task.classList = 'done_task' 
             task_listened.innerHTML = task
@@ -37,7 +38,8 @@ function updateList() {
             icon_delete.innerHTML = 'delete'
             icon_delete.onclick = () => removeTask(index)
 
-            newLi.append( done_task, task_listened, icon_delete)
+            newDiv.append(done_task, task_listened)
+            newLi.append( newDiv, icon_delete)
             newOl.append(newLi)
         });
         
