@@ -26,17 +26,18 @@ function updateList() {
             let newLi = document.createElement('li')
             newLi.classList = "task"
             let icon_delete = document.createElement('span')
-            let position_number = document.createElement('span')
+            let done_task = document.createElement('input')
+            done_task.type = 'checkbox'
             let task_listened = document.createElement('span')
             
-            position_number.innerHTML = `${index + 1}°`
+            done_task.classList = 'done_task' 
             task_listened.innerHTML = task
 
             icon_delete.classList = 'material-icons'
             icon_delete.innerHTML = 'delete'
             icon_delete.onclick = () => removeTask(index)
 
-            newLi.append( position_number, task_listened, icon_delete)
+            newLi.append( done_task, task_listened, icon_delete)
             newOl.append(newLi)
         });
         
@@ -51,7 +52,7 @@ function updateList() {
 
 function addTask(event){
     event.preventDefault()
-    let task = document.getElementById('task')
+    let task = document.getElementById('task_input')
     if (task.value == "") {
         window.alert("Por favor, insira uma tarefa")
     } else {
