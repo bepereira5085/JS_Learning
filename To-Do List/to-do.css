@@ -1,18 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 250;
 }
 
 body {
-    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/287.jpg'); 
+    background-image: url('https://i.pinimg.com/originals/eb/bc/ed/ebbced209b13a1b433cafbf1cb44e3ce.jpg'); 
     background-size: cover;
-    backdrop-filter: blur(0px);
     display: flex;
     flex-direction: column;
     justify-content:space-between;
     min-height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 header {
@@ -20,14 +24,28 @@ header {
     align-items: center;
     justify-content: space-between;
     align-items: center;
-    padding: 2vw;
+    margin: 5vh 0 0 0;
     color: white;
 }
 
 #search_div {
     display: flex;
     align-items: center;
-    gap: 1vw;
+    gap: 0.5vw;
+    font-size: 24px;
+}
+
+#search_div > label {
+    opacity: 0.7;
+}
+
+#search_input {
+    background-color: inherit;
+    border: none;
+    border-bottom: solid rgb(255, 255, 255, 0.5) 0.5px;
+    color: white;
+    outline: none;
+    padding: 0.2vw;
 }
 
 #tasklist > p,i {
@@ -40,29 +58,43 @@ header {
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
 }
 
+/* main > i {
+    position: relative;
+    left: 1.6vw;
+    top: -3vh;
+} */
+
 main > ol {
-    background-color: rgba(6, 41, 90, 0.8);
+    background-color: rgba(24, 27, 32, 0.8);
     width: 90vw;
     display: flex;
     flex-direction: column;
-    max-width: 1000px;
     max-height: 70vh;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .task {
     list-style: none;
+    gap: 0.6vw;
     padding: 1vw;
     color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-align: left;
-    margin-bottom: 0.5vh;
     color: white;
+    border-bottom: solid 0.5px rgb(255, 255, 255, 0.1);
+}
+
+.task:hover {
+    transform: scale(1.005);
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    background-color: rgba(37, 42, 49, 0.8);
 }
 
 .task >  div{
@@ -71,6 +103,10 @@ main > ol {
     justify-content: space-around;
     margin-left: 0.7vw;
     gap: 1vw;
+}
+
+.task > div > span {
+    text-align:justify;
 }
 
 .task > span {
@@ -86,13 +122,14 @@ main > ol {
 .done_task{
     position: relative;
     top: 0.98px;
+    opacity: 1;
 }
 
 footer {
     background-color: inherit;
-    background-color: rgb(26, 65, 120, 0.6);
+    background-color: rgba(24, 27, 32, 0.8);
     padding: 2vh;
-    margin: 2vh 5vw;
+    margin: 2vh 0vw;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -104,8 +141,6 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #task_input {
@@ -113,12 +148,12 @@ footer {
     font-size: 16px;
     border: none;
     padding: 0.5vh;
-    width: 60vw;
+    width: 90vw;
+    max-width: 930px;
     margin-top: 0.1vh;
     color: white;
+    outline: none;
 }
-
-
 
 ol::-webkit-scrollbar {
     width: 4px;
@@ -126,11 +161,11 @@ ol::-webkit-scrollbar {
   }
   
   ol::-webkit-scrollbar-thumb {
-    background-color: rgb(126, 153, 190); /* Cor da barra de rolagem */
+    background-color: rgb(126, 153, 190);
     border-radius: 10px;
   }
 
   ol::-webkit-scrollbar-track {
-    opacity: 0; /* Fundo da barra */
+    opacity: 0;
   }
   

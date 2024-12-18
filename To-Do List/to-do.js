@@ -17,11 +17,19 @@ function updateList() {
     let tasklist = document.getElementById('tasklist')
     tasklist.innerHTML = ''
 
+    let remove_all = document.createElement('i')
+    remove_all.classList = 'material-icons'
+    remove_all.innerHTML = 'playlist_remove'
+    remove_all.id = 'remove_all'
+    remove_all.onclick = () => removeAll()
+    // tasklist.append(remove_all)
+
     if (taskList.length > 0) {
         
         let newOl = document.createElement('ol')
         tasklist.append(newOl)
-
+        
+        
         taskList.forEach((task, index) => {
             let newLi = document.createElement('li')
             newLi.classList = "task"
@@ -31,17 +39,18 @@ function updateList() {
             let task_listened = document.createElement('span')
             let newDiv = document.createElement('div')
             
-            done_task.classList = 'done_task' 
+            done_task.classList = 'done_task'
+            done_task.id = 'done_task'
             task_listened.innerHTML = task
-
+            
             icon_delete.classList = 'material-icons'
             icon_delete.innerHTML = 'delete'
             icon_delete.onclick = () => removeTask(index)
-
+            
             newDiv.append(done_task, task_listened)
             newLi.append( newDiv, icon_delete)
             newOl.append(newLi)
-        });
+        })
         
     } else {
         tasklist.innerHTML = initial_message
@@ -71,5 +80,12 @@ function addTask(event){
 function removeTask(index) {
     taskList.splice(index, 1)
     localStorage.setItem('taskList', JSON.stringify(taskList))
+    updateList()
+}
+
+/* REMOVER TODAS AS TAREFAS */
+
+function removeAll () {
+    taskList = []
     updateList()
 }

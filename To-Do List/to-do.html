@@ -6,16 +6,14 @@
     <title>To-Do List</title>
     <link rel="stylesheet" href="to-do.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
 </head>
 <body onload="loadTasks()">
     <header>
         <h2>To-Do List</h2>
         <div id='search_div'>
             <input type="search" id="search_input">
-            <label for="search_input" class="material-icons" style="font-size: 30px; color:white;">search</label>
+            <label for="search_input" class="material-icons">search</label>
         </div>
     </header>
     <main id="tasklist">
@@ -25,7 +23,7 @@
     <div id="footer_div"> 
         <footer>
             <i onclick="addTask(event)" class="material-icons" style="color:white; filter: none;">add</i>
-            <form onsubmit="addTask(event)"><input type="text" id="task_input"></form>
+            <form onsubmit="addTask(event)" autocomplete="off"><input type="text" id="task_input" placeholder=" Adicionar tarefa..."></form>
         </footer>
     </div>
 </body>
