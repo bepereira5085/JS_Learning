@@ -77,6 +77,17 @@ main > ol {
     overflow-x: hidden;
 }
 
+#check_task {
+    /* border: solid red;
+    background-color: green; */
+    font-size: 25px;
+}
+
+.done_task{
+    position: absolute;
+    opacity: 0;
+}
+
 .task {
     list-style: none;
     gap: 0.6vw;
@@ -119,11 +130,6 @@ main > ol {
     cursor: pointer;
 }
 
-.done_task{
-    position: relative;
-    top: 0.98px;
-    opacity: 1;
-}
 
 footer {
     background-color: inherit;

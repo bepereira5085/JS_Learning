@@ -16,6 +16,8 @@ function updateList() {
 
     let tasklist = document.getElementById('tasklist')
     tasklist.innerHTML = ''
+    
+    //BOTAO DE LIMPAR LISTA
 
     let remove_all = document.createElement('i')
     remove_all.classList = 'material-icons'
@@ -29,29 +31,43 @@ function updateList() {
         let newOl = document.createElement('ol')
         tasklist.append(newOl)
         
-        
+        //CRIA A LISTA DE TAREFA
         taskList.forEach((task, index) => {
+
             let newLi = document.createElement('li')
             newLi.classList = "task"
-            let icon_delete = document.createElement('span')
-            let done_task = document.createElement('input')
-            done_task.type = 'checkbox'
-            let task_listened = document.createElement('span')
             let newDiv = document.createElement('div')
             
+            // CRIA CHECKBOX --------------------------------
+            let checkbox_label = document.createElement('label')
+            checkbox_label.innerHTML = 'check'
+            checkbox_label.classList = 'material-icons'
+            checkbox_label.id = 'check_task'
+            checkbox_label.onclick = function (index) {
+                done_task.value = true
+                console.log('sucesso')
+            }
+
+            let done_task = document.createElement('input')
+            done_task.type = 'checkbox'
             done_task.classList = 'done_task'
             done_task.id = 'done_task'
+            checkbox_label.append(done_task)
+
+            //-----------------------------------------------
+            
+            let task_listened = document.createElement('span')
             task_listened.innerHTML = task
             
+            let icon_delete = document.createElement('span')
             icon_delete.classList = 'material-icons'
             icon_delete.innerHTML = 'delete'
             icon_delete.onclick = () => removeTask(index)
             
-            newDiv.append(done_task, task_listened)
+            newDiv.append(checkbox_label, task_listened)
             newLi.append( newDiv, icon_delete)
             newOl.append(newLi)
         })
-        
     } else {
         tasklist.innerHTML = initial_message
     }
