@@ -9,6 +9,16 @@ function loadTasks() {
     updateList()
 }
 
+// function checkVerify() {
+//     if (done_task.value == true) {
+//         checkbox_label.innerHTML = 'check'
+//     } else if (done_task.value == false) {
+//         checkbox_label.innerHTML = ''
+//         checkbox_label.style.border = 'solid 2px white'
+//         checkbox_label.style.marginLeft = '2.5px'
+//         checkbox_label.style.padding = '8px'
+//     }
+// }
 
 /* CONSTRÓI A LISTA DE TAREFA */
 
@@ -40,18 +50,18 @@ function updateList() {
             
             // CRIA CHECKBOX --------------------------------
             let checkbox_label = document.createElement('label')
-            checkbox_label.innerHTML = 'check'
             checkbox_label.classList = 'material-icons'
             checkbox_label.id = 'check_task'
-            checkbox_label.onclick = function (index) {
-                done_task.value = true
-                console.log('sucesso')
-            }
+            // checkbox_label.onclick = function () {
+            //     done_task.value == true
+            //     checkVerify()
+            // }
 
             let done_task = document.createElement('input')
             done_task.type = 'checkbox'
             done_task.classList = 'done_task'
             done_task.id = 'done_task'
+            // done_task == false
             checkbox_label.append(done_task)
 
             //-----------------------------------------------
@@ -71,7 +81,7 @@ function updateList() {
     } else {
         tasklist.innerHTML = initial_message
     }
-    console.log(taskList)
+    // checkVerify()
 }
 
 
